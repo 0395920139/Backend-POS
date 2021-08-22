@@ -28,8 +28,10 @@ class LoginAPI(KnoxLoginView):
         serializer = AuthTokenSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
+        print(request.user.get_all_permissions)
         login(request, user)
         return super(LoginAPI, self).post(request, format=None)
+
 
         
         
