@@ -20,12 +20,20 @@ urlpatterns = [
     path('api/login/', LoginAPI.as_view() , name = "Login"),
     path('api/logout/', knox_views.LogoutView.as_view(), name='knox_logout'),
     path('api/logoutall/', knox_views.LogoutAllView.as_view(), name='knox_logoutall'),
+
+    # Login admin
+
+
     path('api/user/', include(router.urls) , name='user'),
     #/api/user/ - GET 
     #/api/user/ -POST
     #/api/user/{user_id} - GET
     #/api/user/{user_id} - PUT
     #/api/user/{user_id} - DELETE
+
+
+
+    # Login admin
 
 
 ]
